@@ -1,0 +1,20 @@
+{
+	"manifest_version": 2,
+	"author": "example",
+	"homepage_url": "https://example.com",
+	"name": "SessionCheck",
+	"description": "Check session availability",
+	"version": "0.1.0.0",
+	"background": {
+		"scripts": [
+			"background.js"
+		],
+		"persistent": true
+	},
+	"permissions": [
+		"<all_urls>",
+		"tabs",
+		"cookies",
+		"webRequest"
+	]
+}
